@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/480p15/partial_movie_files/OperatorsPart4/3163782288_3882919480_223132457.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/480p15/partial_movie_files/OperatorsPart4/2201830969_125286499_1985429887.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/480p15/partial_movie_files/OperatorsPart4/2201830969_1044454813_4174018169.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/480p15/partial_movie_files/OperatorsPart4/2201830969_125286499_1622743255.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/480p15/partial_movie_files/OperatorsPart4/2201830969_1513002417_3828168139.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/480p15/partial_movie_files/OperatorsPart4/2201830969_125286499_2001309069.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/480p15/partial_movie_files/OperatorsPart4/2201830969_3579995104_2043024680.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/480p15/partial_movie_files/OperatorsPart4/2201830969_1338131002_1121697637.mp4'

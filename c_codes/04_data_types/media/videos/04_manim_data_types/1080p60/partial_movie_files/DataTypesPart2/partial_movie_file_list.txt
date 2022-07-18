@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/04_data_types/media/videos/04_manim_data_types/1080p60/partial_movie_files/DataTypesPart2/450974505_2370647514_223132457.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/04_data_types/media/videos/04_manim_data_types/1080p60/partial_movie_files/DataTypesPart2/34786186_125286499_3777717469.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/04_data_types/media/videos/04_manim_data_types/1080p60/partial_movie_files/DataTypesPart2/34786186_3819802830_4174018169.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/04_data_types/media/videos/04_manim_data_types/1080p60/partial_movie_files/DataTypesPart2/34786186_125286499_2523583893.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/04_data_types/media/videos/04_manim_data_types/1080p60/partial_movie_files/DataTypesPart2/34786186_475623252_3828168139.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/04_data_types/media/videos/04_manim_data_types/1080p60/partial_movie_files/DataTypesPart2/34786186_125286499_3005074112.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/04_data_types/media/videos/04_manim_data_types/1080p60/partial_movie_files/DataTypesPart2/34786186_4190883147_683766203.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/04_data_types/media/videos/04_manim_data_types/1080p60/partial_movie_files/DataTypesPart2/34786186_1338131002_3848797840.mp4'

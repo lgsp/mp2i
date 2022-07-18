@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/1080p60/partial_movie_files/OperatorsPart1/450974505_180898010_223132457.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/1080p60/partial_movie_files/OperatorsPart1/34786186_125286499_4101285480.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/1080p60/partial_movie_files/OperatorsPart1/34786186_4203849937_4174018169.mp4'
+file 'file:/Users/lgsp/Documents/students/noe-mp2i/c-codes/05_operators/media/videos/05_manim_operators/1080p60/partial_movie_files/OperatorsPart1/34786186_1338131002_568993140.mp4'
