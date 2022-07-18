@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Trying Org-mode for blogging</title>
+<!-- 2022-07-18 Mon 16:00 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Laurent Garnier">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  displayAlign: "center",
+  displayIndent: "2em",
+  messageStyle: "none",
+  "HTML-CSS": {
+    scale: 100,
+    styles: {
+      ".MathJax_Display": {
+        "font-size": "100%"
+      }
+    }
+  },
+  "SVG": {
+    scale: 100,
+    styles: {
+      ".MathJax_SVG_Display": {
+        "font-size": "100%",
+        "margin-left": "-2.281em"
+      }
+    }
+  }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"></script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title">Trying Org-mode for blogging</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Source &amp; Usage</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Source</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Go visit this GitHub repo to get it:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/marsmining/ox-twbs">https://github.com/marsmining/ox-twbs</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Usage</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Open or create an org file and run <code>org-twbs-export-to-html</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Tool You Need</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Obviously you need GNU Emacs on your machine.
+</p>
+
+<p>
+How to get it? Here are some options:
+</p>
+<ul class="org-ul">
+<li>Go to the official website: <a href="https://www.gnu.org/software/emacs/">https://www.gnu.org/software/emacs/</a>
+</li>
+<li>For macOS and Windows there is a very user-friendly customized
+version with convenient stuff for \(\LaTeX{}\) and R programming on
+Vincent Goulet's (GitLab) repo:
+<ol class="org-ol">
+<li>For Windows: <a href="https://vigou3.gitlab.io/emacs-modified-windows/">https://vigou3.gitlab.io/emacs-modified-windows/</a>
+</li>
+<li>For macOS: <a href="https://vigou3.gitlab.io/emacs-modified-macos/">https://vigou3.gitlab.io/emacs-modified-macos/</a>
+</li>
+</ol>
+</li>
+<li>If you're on macOS you can also use Hombrew to get it:
+<a href="https://brew.sh/">https://brew.sh/</a>
+</li>
+<li>Or going to <a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Example of Source Code Samples</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> C Programming</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+
+<pre class="src src-c">#include &lt;stdio.h&gt;
+
+int main()
+{
+  const int magicNumber = 3;
+  const float sqrt2 = 1.414;
+  const double champernowne = 0.1234567891011121314;
+
+  printf("Some CONSTANTS:\n");
+  printf("%d is a magic number\n", magicNumber);
+  printf("√2 ~ %.3f\n", sqrt2);
+  printf("Champernowne's constant ~ %.17lf\n", champernowne);
+
+  return 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Python</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+
+<pre class="src src-python">from manim import *
+
+class ConstantsFullCode(Scene):
+    def construct(self):
+	text = Text("03 Constants Full Code", font = "Monaco")
+	self.play(Write(text), run_time=2)
+	self.wait(2)
+	self.remove(text)
+
+	codeFullCode = Code(
+	    file_name="03_constants.c",
+	    tab_width = 4,
+	    background_stroke_width = 1,
+	    background_stroke_color = WHITE,
+	    insert_line_no = True,
+	    style = "emacs",
+	    background = "window",
+	    language = "c",
+	    font = "Monaco",
+	).scale(1)
+	self.play(Write(codeFullCode), run_time=16)
+	self.wait(8)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Embedded Pictures &amp; Videos</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Pictures</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<figure>
+<p><img src="./c_codes/03_constants/media/images/03_manim_const/PicFullCode_ManimCE_v0.16.0.post0.png" class="img-responsive" alt="PicFullCode_ManimCE_v0.16.0.post0.png">
+</p>
+</figure>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Videos</h3>
+<div class="outline-text-3" id="text-3-2">
+</div><div id="outline-container-sec-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1"><span class="section-number-4">3.2.1</span> From YouTube</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<iframe width="768" height="432"
+src="https://www.youtube.com/embed/FBKwFN_W2Jk" title="YouTube
+video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-2-2" class="outline-4">
+<h4 id="sec-3-2-2"><span class="section-number-4">3.2.2</span> From Everywhere On The Web</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<iframe width="768" height="432"
+src="https://laurentgarnier.podia.com/view/courses/ressourc-vous-avec-le-langage-c/643498-week-1-4/4465193-constantsfullcode-mp4"
+title="Podia video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Embedded Links</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Do you know ManimCE?</h3>
+<div class="outline-text-3" id="text-4-1">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jskrC5XuuJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Learn C Programming With ManimCE</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Get my course on C programming (in French) :
+</p>
+<script src="https://cdn.podia.com/embeds.js" async="async"></script><a href="https://laurentgarnier.podia.com/ressourc-vous-avec-le-langage-c" data-podia-embed="link">RessourC-vous avec le langage C</a>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Join my Newsletter for FREE</h3>
+<div class="outline-text-3" id="text-4-3">
+<script src="https://cdn.podia.com/embeds.js" async="async"></script><a href="https://laurentgarnier.podia.com/l-affiliation-pour-les-nuls" data-podia-embed="link">L'affiliation pour les nuls</a>
+</div>
+</div>
+</div>
+</div><div class="col-md-3"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Source &amp; Usage</a>
+<ul class="nav">
+<li><a href="#sec-1-1">1.1. Source</a></li>
+<li><a href="#sec-1-2">1.2. Usage</a></li>
+<li><a href="#sec-1-3">1.3. Tool You Need</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Example of Source Code Samples</a>
+<ul class="nav">
+<li><a href="#sec-2-1">2.1. C Programming</a></li>
+<li><a href="#sec-2-2">2.2. Python</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Embedded Pictures &amp; Videos</a>
+<ul class="nav">
+<li><a href="#sec-3-1">3.1. Pictures</a></li>
+<li><a href="#sec-3-2">3.2. Videos</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Embedded Links</a>
+<ul class="nav">
+<li><a href="#sec-4-1">4.1. Do you know ManimCE?</a></li>
+<li><a href="#sec-4-2">4.2. Learn C Programming With ManimCE</a></li>
+<li><a href="#sec-4-3">4.3. Join my Newsletter for FREE</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Laurent Garnier</p>
+<p class="date">Created: 2022-07-18 Mon 16:00</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="http://orgmode.org">Org-mode</a> 9.4)</p>
+</div>
+</footer>
+</body>
+</html>
