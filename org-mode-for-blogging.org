@@ -1,0 +1,124 @@
+#+TITLE: Trying Org-mode for blogging
+#+AUTHOR: Laurent Garnier
+
+* Source & Usage
+** Source
+
+   Go visit this GitHub repo to get it:
+   
+   + [[https://github.com/marsmining/ox-twbs]]
+
+** Usage
+
+   Open or create an org file and run =org-twbs-export-to-html=
+
+** Tool You Need
+
+   Obviously you need GNU Emacs on your machine.
+
+   How to get it? Here are some options:
+   + Go to the official website: [[https://www.gnu.org/software/emacs/]]
+   + For macOS and Windows there is a very user-friendly customized
+     version with convenient stuff for $\LaTeX{}$ and R programming on
+     Vincent Goulet's (GitLab) repo:
+     1. For Windows: [[https://vigou3.gitlab.io/emacs-modified-windows/]]
+     2. For macOS: [[https://vigou3.gitlab.io/emacs-modified-macos/]]
+   + If you're on macOS you can also use Hombrew to get it:
+     [[https://brew.sh/]]
+   + Or going to [[https://emacsformacosx.com/]]
+	
+* Example of Source Code Samples
+** C Programming
+
+   #+BEGIN_SRC c
+     #include <stdio.h>
+
+     int main()
+     {
+       const int magicNumber = 3;
+       const float sqrt2 = 1.414;
+       const double champernowne = 0.1234567891011121314;
+
+       printf("Some CONSTANTS:\n");
+       printf("%d is a magic number\n", magicNumber);
+       printf("√2 ~ %.3f\n", sqrt2);
+       printf("Champernowne's constant ~ %.17lf\n", champernowne);
+  
+       return 0;
+     }
+   #+END_SRC
+
+** Python
+
+   #+BEGIN_SRC python
+     from manim import *
+        
+     class ConstantsFullCode(Scene):
+	 def construct(self):
+	     text = Text("03 Constants Full Code", font = "Monaco")
+	     self.play(Write(text), run_time=2)
+	     self.wait(2)
+	     self.remove(text)
+        
+	     codeFullCode = Code(
+		 file_name="03_constants.c",
+		 tab_width = 4,
+		 background_stroke_width = 1,
+		 background_stroke_color = WHITE,
+		 insert_line_no = True,
+		 style = "emacs",
+		 background = "window",
+		 language = "c",
+		 font = "Monaco",
+	     ).scale(1)
+	     self.play(Write(codeFullCode), run_time=16)
+	     self.wait(8)
+   #+END_SRC
+
+* Embedded Pictures & Videos
+** Pictures
+
+   [[./c_codes/03_constants/media/images/03_manim_const/PicFullCode_ManimCE_v0.16.0.post0.png]]
+
+** Videos
+*** From YouTube
+
+   #+BEGIN_EXPORT HTML
+   <iframe width="768" height="432"
+   src="https://www.youtube.com/embed/FBKwFN_W2Jk" title="YouTube
+   video player" frameborder="0" allow="accelerometer; autoplay;
+   clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+   allowfullscreen></iframe>
+   #+END_EXPORT
+
+   
+*** From Everywhere On The Web    
+
+   #+BEGIN_EXPORT HTML
+   <iframe width="768" height="432"
+   src="https://laurentgarnier.podia.com/view/courses/ressourc-vous-avec-le-langage-c/643498-week-1-4/4465193-constantsfullcode-mp4"
+   title="Podia video player" frameborder="0" allow="accelerometer; autoplay;
+   clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+   allowfullscreen></iframe>
+   #+END_EXPORT
+
+
+* Embedded Links
+** Do you know ManimCE?
+
+   #+BEGIN_EXPORT HTML
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/jskrC5XuuJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   #+END_EXPORT
+** Learn C Programming With ManimCE
+
+  Get my course on C programming (in French) :
+  #+BEGIN_EXPORT HTML
+  <script src="https://cdn.podia.com/embeds.js" async="async"></script><a href="https://laurentgarnier.podia.com/ressourc-vous-avec-le-langage-c" data-podia-embed="link">RessourC-vous avec le langage C</a>
+  #+END_EXPORT
+
+
+** Join my Newsletter for FREE
+
+   #+BEGIN_EXPORT HTML
+   <script src="https://cdn.podia.com/embeds.js" async="async"></script><a href="https://laurentgarnier.podia.com/l-affiliation-pour-les-nuls" data-podia-embed="link">L'affiliation pour les nuls</a>
+   #+END_EXPORT
